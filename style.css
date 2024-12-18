@@ -1,0 +1,273 @@
+:root {
+    --primary-color: #29a598;
+    --text-color: #394c4a;
+    --background-light: #ffffff;
+    --header-height: 100vh;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 110%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Work Sans', Helvetica, sans-serif;
+    color: #394c4a;
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+.header-background {
+    background-image: url('img/bg.jpg'); /* เปลี่ยนเป็นเส้นทางของรูปพื้นหลัง */
+    background-position: center; /* จัดให้ภาพพื้นหลังอยู่ตรงกลาง */
+    background-size: cover; /* ให้ภาพพื้นหลังครอบคลุมทั้งพื้นที่ */
+    text-align: center;
+    height: 100vh; /* ความสูงเต็มหน้าจอ */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(82, 78, 78); /* เปลี่ยนสีข้อความให้เหมาะสมกับพื้นหลัง */
+    padding: 20px; /* ระยะห่างภายใน */
+    position: relative; /* เพื่อวางเนื้อหาทับ */
+}
+
+.header-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit; /* ใช้ภาพพื้นหลังเดียวกับ .header-background */
+    background-position: inherit;
+    background-size: inherit;
+    filter: blur(100px); /* ฟิลเตอร์เบลอ */
+    z-index: -1; /* ให้อยู่ด้านหลังเนื้อหาหลัก */
+}
+
+.header-content img {
+    max-width: 250px;
+    width: 275px; /* กำหนดขนาดของภาพ (สามารถปรับขนาดตามที่ต้องการ) */
+    height: 275px; /* ให้ความสูงเท่ากับความกว้างเพื่อให้รูปเป็นวงกลม */
+    border-radius: 50%; /* ทำให้ภาพกลม */
+    object-fit: cover; /* ป้องกันไม่ให้ภาพบิดเบือน หากภาพไม่เป็นสี่เหลี่ยมจัตุรัส */
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+
+.header-content h1, .header-content p {
+    margin: 0.5rem 0;
+    font-family: 'Unica One', cursive;
+}
+
+
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Unica One', cursive;
+    font-size: 1.2rem;
+}
+
+.header-content img {
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.header-content h1, .header-content p {
+    margin: 0.5rem 0;
+    font-family: 'Unica One', cursive;
+
+}
+
+#about {
+    background-color: #F8F4E1; 
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 40px;
+    border-radius: 0.5%;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+#about .about-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+#about .about-images {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px; /* ระยะห่างระหว่างกลุ่มรูปภาพและเนื้อหา */
+}
+
+#about .about-images img {
+    width: 100px; /* ขนาดความกว้างของภาพ */
+    margin-bottom: 75px; /* ระยะห่างระหว่างรูปภาพ ให้เท่ากับระยะห่างของตัวหนังสือ */
+    border-radius: 8px; /* มุมโค้งของภาพ (ถ้าต้องการ) */
+}
+
+#about .about-content h3 {
+    margin-top: 25px;
+    margin-bottom: 100px; /* ระยะห่างระหว่างหัวข้อการศึกษา */
+}
+
+#about .about-content p {
+    margin-top: -80px; /* ลดระยะห่างระหว่างชื่อสถานที่กับคำบรรยาย */
+    margin-bottom: 100px;
+}
+
+
+
+
+#portfolio {
+    text-align: center;
+    background-color: #AF8F6F   ; /* สีพื้นหลังสำหรับส่วนนี้ */
+    padding: 40px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+#portfolio .project {
+    display: inline-block;
+    width: 250px; /* ขนาดคอนเทนเนอร์ของโปรเจกต์ */
+    margin: 20px;
+    text-align: center;
+    border: 1px solid #ddd; /* เพิ่มกรอบให้โปรเจกต์เพื่อความชัดเจน */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้โปรเจกต์ */
+    transition: transform 0.3s ease; /* เพิ่ม effect ขณะ hover */
+}
+
+#portfolio .project:hover {
+    transform: translateY(-5px); /* ยกโปรเจกต์ขึ้นเล็กน้อยเมื่อ hover */
+}
+
+#portfolio .project img {
+    width: 100%; /* ให้ภาพกว้างเต็มคอนเทนเนอร์ */
+    height: 200px; /* กำหนดความสูงที่คงที่ */
+    object-fit: cover; /* ให้ภาพคงขนาดโดยไม่เสียอัตราส่วน */
+    border-radius: 8px; /* มุมโค้งของภาพ */
+}
+
+#portfolio .project p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #ffffff; /* สีตัวอักษร */
+}
+
+
+
+#contact {
+    background-color: #543310;
+    padding: 15px;
+    border-radius: 0.5%;
+    text-align: center;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center; /* จัดตำแหน่งทั้งหมดให้อยู่กลาง */
+    align-items: center; /* จัดแนวตั้งให้โลโก้และข้อความอยู่กึ่งกลาง */
+    gap: 20px; /* เว้นระยะห่างระหว่างข้อความ */
+    flex-wrap: wrap; /* หากข้อความยาวเกินไป จะไปขึ้นบรรทัดใหม่ */
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #F8F4E1;
+    margin: 0; /* ลบระยะห่างที่ไม่จำเป็น */
+    display: flex;
+    align-items: center; /* จัดแนวตั้งให้โลโก้และข้อความอยู่กึ่งกลาง */
+}
+#contact h2 {
+    color: #F8F4E1;
+    margin-top: 10px;
+    margin-bottom: 25px;
+
+}
+
+.contact-info .icon {
+    width: 30px; /* ขนาดของไอคอน */
+    height: 30px; /* ขนาดของไอคอน */
+    margin-right: 10px; /* เว้นระยะห่างระหว่างโลโก้และข้อความ */
+}
+
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Additional Styles */
+h2 {
+    color: #333;
+    font-family: 'Unica One', cursive;
+    font-size: 2.3rem;
+}
+
+a {
+    color: #29a598;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #208479;
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+  
+  .profile-photo {
+        width: 50%; 
+        margin: 0 auto; 
+    }
+}
